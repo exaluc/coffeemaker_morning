@@ -1,0 +1,11 @@
+aap_hub: null
+category: coffee
+description: Role that make morning coffe
+dt_dev: 19/11/2023
+dt_prod: 19/11/2023
+dt_update: 19/11/2023
+requester: Service one
+subCategory: ['morning', 'coffee']
+time_saving: '10 min'
+users: ['service one', 'service two']
+version: '0.0.1'

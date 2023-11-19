@@ -1,0 +1,23 @@
+---
+# tasks file for coffeemaker_morning
+- name: Start brewing coffee
+  ansible.builtin.uri:
+    url: "http://iot-coffeemaker/start"
+    method: GET
+
+- name: Check coffee temperature
+  ansible.builtin.uri:
+    url: "http://iot-coffeemaker/temperature"
+    method: GET
+  register: coffee_temp
+
+- name: Notify if coffee is ready
+  ansible.builtin.debug:
+    msg: "Coffee is ready!"
+  when: coffee_temp.json.temperature >= temperature
+
+- name: Turn off coffee maker
+  ansible.builtin.uri:
+    url: "http://iot-coffeemaker/turnoff"
+    method: GET
+  when: coffee_temp.json.temperature >= temperature

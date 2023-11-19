@@ -1,0 +1,6 @@
+---
+- name: Demo morning coffee
+  hosts: localhost
+  connection: local
+  roles:
+    - coffeemaker_morning

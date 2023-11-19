@@ -1,0 +1,6 @@
+---
+# defaults file for coffeemaker_morning
+
+# title: Temperature coffee
+# required: True
+temperature: 90
